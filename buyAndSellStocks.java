@@ -14,12 +14,8 @@ public class buyAndSellStocks {
         }
         return maxProfit;
     }
-//public static void main(String args[]){
+    public static void main(String args[]){
         int prices[]={7,1,5,3,6,4};
         System.out.println("max profit is "+ maxProfitOfStocks(prices));
-
-        //Q3 assigmnent problem 
-        int prices1[]={7,6,4,3,1};
-        System.out.println("max profit is "+ maxProfitOfStocks(prices1));
     }
 }
