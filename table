@@ -1,0 +1,15 @@
+package test;
+
+public class Table {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int i=1;
+		int table=1;
+for(i=1;i<=10;i++) {
+	table=i*2;
+	System.out.println("table  " +i+"*2="+table);
+}
+	}
+
+}

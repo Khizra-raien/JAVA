@@ -1,0 +1,31 @@
+package test;
+abstract class Calcul{
+int add(int a, int b){
+return a+b;
+}
+int sub(int a, int b){
+return a-b;
+}
+abstract int mul(int a, int b);
+abstract int div(int a, int b);
+abstract int large(int a, int b);
+}
+public class Calculation1 extends Calcul{
+int mul(int a, int b){
+return a*b;
+}
+int div(int a, int b){
+return a/b;
+}
+int large(int a, int b){
+return Math.max(a,b);
+}
+public static void main(String[] args){
+Calculation1 t1=new Calculation1();
+System.out.println("addition is "+t1.add(5,6));
+System.out.println(t1.sub(5,6));
+System.out.println(t1.mul(5,6));
+System.out.println(t1.div(5,6));
+System.out.println(t1.large(5,6));
+}
+}

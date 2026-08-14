@@ -1,0 +1,80 @@
+import java.util.*;
+public class Main{ 
+    public final int max=4;
+    public int[] arr=new int[max];
+    public int top=-1;
+    public void push(int data){
+        if(isFull()){
+            System.out.println("stack overflow");
+            return;
+        }
+        top++;
+        arr[top]=data;
+         System.out.println("pushed "+data);
+         for(int i=top;i>=0;i--){
+             
+         
+         System.out.print(arr[i]+" ");}
+    }
+    public void pop(){
+        if(isEmpty()){
+             System.out.println("stack underflow");
+             return;
+        }
+        
+        int popdata=arr[top--];
+         System.out.println("popped "+popdata);
+          for(int i=top;i>=0;i--){
+             
+         
+         System.out.print(arr[i]+" ");}
+    }
+    
+    public void peek(){
+              if(isEmpty()){
+                   System.out.println("stack is empty");
+                   return;
+              }
+               System.out.println("top element "+ arr[top]);
+             for(int i=top;i>=0;i--){
+             
+         
+         System.out.print(arr[i]+" ");}
+    }
+    
+    
+    public boolean isFull(){
+        return top == max-1;
+    }
+    public boolean isEmpty(){
+        return top ==-1;
+    }
+    
+	public static void main(String[] args) {
+	Scanner sc=new Scanner(System.in);
+		Main stack=new Main();
+		int y;
+		do {
+		    System.out.println("enter  no \n 1] Push \n 2] Pop \n 3] Peek ");
+		int choice =sc.nextInt();
+		    switch(choice){
+		        
+		      case 1: 	for(int i=1;i<=4;i++){
+		                  System.out.println("\n enter no");
+	                         	int n=sc.nextInt();
+		                          stack.push(n);}
+		                          break;
+		     case 2:  stack.pop();
+		     break;
+		     case 3: stack.peek();
+		     break;
+		     default:  System.out.println("enter invalid no");
+		 }
+		    System.out.println("\n do you want to continue y(1) or n(0)");
+	y=sc.nextInt();
+		}while(y==1);
+		        
+		    
+		    
+	} 
+	}

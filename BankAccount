@@ -1,0 +1,58 @@
+package test;
+import java.util.Scanner;
+
+public class BankAccount {
+    String accountHolder;
+    String accountNumber;
+    double balance;
+
+    BankAccount(String accHolder, String accNo, double bal) {
+        accountHolder = accHolder;
+        accountNumber = accNo;
+        balance = bal;
+    }
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.println("Deposited: " + balance);
+        } else {
+            System.out.println("Invalid amount");
+        }
+    }
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + balance);
+        } else {
+            System.out.println("Insufficient balance");
+        }
+    }
+
+    public void displayBalance() {
+        System.out.println("Account: " + accountNumber + 
+                           " | Holder: " + accountHolder + 
+                           " | Balance: " + balance);
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter your Account No: ");
+        String accountNumber = sc.nextLine();
+
+        System.out.print("Enter your Account Holder Name: ");
+        String accountHolder = sc.nextLine();
+
+        System.out.print("Enter your Balance: ");
+        double balance = sc.nextDouble();
+
+        BankAccount acc1 = new BankAccount(accountNumber, accountHolder, balance);
+        acc1.displayBalance();
+        acc1.deposit(5000);
+        acc1.withdraw(2000.0);
+
+        sc.close();
+    }
+}

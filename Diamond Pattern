@@ -1,0 +1,38 @@
+package test;
+
+public class DiamondPattern {
+
+	public static void main(String[] args) {
+		int n=4;
+		for(int i=1;i<=n;i++) {
+			for(int k=1;k<=n-i;k++) { //space
+				System.out.print(" ");	
+			}
+			//upper left side star
+		for(int j=1;j<=i;j++) {
+			System.out.print("*");	
+		}
+		//upper right side star
+		for(int j=2;j<=i;j++) {
+			System.out.print("*");
+		}
+		System.out.println();
+		}
+		//lower left  star
+		for(int i=n;i>=1;i--) {
+		for(int k=1;k<=n-i;k++) { //space
+			System.out.print(" ");	
+		}
+		for(int j=1;j<=i;j++) { //lower left  side star
+			System.out.print("*");	
+		}//lower right side star
+		for(int j=2;j<=i;j++) {
+			System.out.print("*");	
+		}
+		
+		System.out.println();	
+		}
+
+	}
+
+}

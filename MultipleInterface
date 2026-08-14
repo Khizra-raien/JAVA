@@ -1,0 +1,22 @@
+package test;
+interface Animal{
+public void show();
+}
+interface A2{
+public void run();
+}
+public class Test1 implements Animal,A2{
+	public void show(){
+		System.out.println("show the method");
+		}
+	public void run(){
+		System.out.println("method is running");
+		}
+public static void main(String[] args){
+Test1 t=new Test1();
+t.show();
+t.run();
+
+
+}
+}

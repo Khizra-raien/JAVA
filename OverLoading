@@ -1,0 +1,36 @@
+package test;
+import java.util.Scanner;
+
+public class Overloading {
+    static int area(int s) {
+        return s * s; // Square
+    }
+
+    static double area(double r) {
+        return (22 * r * r) / 7; // Circle
+    }
+
+    static double area(double b, double h) {
+        return (b * h) / 2; // Rectangle (assumed triangle formula here)
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter side: ");
+        int s = sc.nextInt();
+
+        System.out.print("Enter radius: ");
+        double r = sc.nextDouble();
+
+        System.out.print("Enter base and height: ");
+        double b = sc.nextDouble();
+        double h = sc.nextDouble();
+
+        System.out.println("Area of square: " + area(s));
+        System.out.println("Area of circle: " + area(r));
+        System.out.println("Area of rectangle (triangle formula): " + area(b, h));
+
+        sc.close();
+    }
+}

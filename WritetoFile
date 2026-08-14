@@ -1,0 +1,16 @@
+package test;
+import java.io.*;
+public class WritetoFile {
+	public static void main(String[] args) {
+try {
+	FileWriter w =new FileWriter("test.txt");
+	w.write("hello , this is my  first new file ");
+	w.close();
+	System.out.println("successfully wrote in the file");
+	
+}catch(Exception e) {
+	System.out.println("error");
+}
+	}
+
+}

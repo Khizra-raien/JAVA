@@ -1,0 +1,40 @@
+package test;
+
+public class butterfly {
+
+	public static void main(String[] args) {
+	int n=5;
+	//UPPER PART 
+	for(int i=1;i<=n;i++) {
+		for(int j=1;j<=i;j++) { //STAR
+			System.out.print("*");
+		}
+		int space=2*(n-i);
+		for(int k=1;k<=space;k++) { //SPACE
+			System.out.print(" ");
+		}
+		 // 2ND PART STAR
+		for(int j=1;j<=i;j++) {
+			System.out.print("*");
+		}
+		System.out.println();
+	}
+	
+	// LOWER PART
+	for(int i=n;i>=1;i--) {
+		for(int j=1;j<=i;j++) { //STAR
+			System.out.print("*");
+		}
+		int space= 2*(n-i);
+		for(int k=1;k<=space;k++) { //SPACE
+			System.out.print(" ");
+		}
+		for(int j=1;j<=i;j++) {
+			System.out.print("*");
+		}
+		System.out.println();
+	}
+
+	}
+
+}
