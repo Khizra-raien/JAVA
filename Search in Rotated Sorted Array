@@ -1,0 +1,34 @@
+class Solution {
+    public int search(int[] num, int target) {
+        int start=0; int end=num.length-1;
+        
+        while(start<=end){
+            int mid=(start+end)/2;
+            if(num[mid]==target){
+                return mid;
+            }
+            //left sorted
+            if(num[start]<=num[mid]){
+                if(num[start] <= target && target <= num[mid]){
+                    //left side target
+                    end=mid-1;
+                }
+                else{// right side target
+                        start=mid+1;
+                    }
+            
+             }
+            else{
+                //right sorted
+                if(num[mid] <=target && target <=num[end]){// right side
+                    start=mid+1;
+                }
+                else{
+                    end=mid-1; //left side 
+                }
+
+             }
+    }
+    return -1;
+    }
+}
