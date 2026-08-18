@@ -1,0 +1,54 @@
+package RecursionImp;
+public class MergeSort {
+    public static void divide(int[] arr, int si, int ei){
+        //
+        if(si>=ei){
+            return;
+        }
+        int mid=si+(ei-si)/2;
+        divide(arr,si,mid);//left
+        divide(arr, mid+1, ei);//right
+        conquer(arr,si,mid,ei);
+    }
+    public static void conquer(int[] arr, int si, int mid, int ei){
+        int[] merged= new int[ei-si+1]; // ei=6, si=0 len=7; 6-0=6+1= 7=len
+        int i=si;// iterator for left part 
+        int j=mid+1; // iterator for right part
+        int k=0; // iterator for temp
+
+        while(i<=mid && j<=ei){
+            if(arr[i]<arr[j]){
+                merged[k]=arr[i];
+                i++;
+            }
+            else{
+                merged[k]=arr[j];
+                j++;
+            }
+            k++;
+        }
+        //left part mai koi value singlre hai 
+        while(i<=mid){
+            merged[k]=arr[i];
+            k++; i++;
+        }
+        // rigth part mai koi value singlre
+        while(j<=ei){
+            merged[k++]=arr[j++];
+        }
+        //copy temp to original array
+        for( k=0,i=si;k<merged.length;k++,i++){
+            arr[i]=merged[k];
+        }
+    }
+    public static void  printArr(int[] arr){
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+    public static void main(String[] args) {
+        int[] arr={6,2,5,8,9,4};
+        divide(arr,0,arr.length-1);
+        printArr(arr);
+    }
+}
