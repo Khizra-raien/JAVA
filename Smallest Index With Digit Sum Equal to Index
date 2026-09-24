@@ -1,0 +1,22 @@
+class Solution {
+    public int smallestIndex(int[] nums) {
+        int n=nums.length;
+        for(int i=0;i<n;i++){
+            if(nums[i]>9){
+                int no=0;
+                while(nums[i]>0){
+                    int lst=nums[i]%10;
+                    no=no+lst;
+                    nums[i]=nums[i]/10;
+                }
+                if(no == i){
+                    return i;
+                }
+            }
+            else if(nums[i]==i){
+                return i;
+            }
+        }
+        return -1;
+    }
+}
