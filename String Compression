@@ -1,0 +1,35 @@
+class Solution {
+    public int compress(char[] chars) {
+        int n=chars.length;
+        if(n==1){
+            return 1;
+        }
+        String str="";
+        int ct=1;               
+        for(int i=1;i<n;i++){
+            char ch= chars[i];
+            if(ch !=chars[i-1]){
+            str +=chars[i-1];
+                if(ct>1){
+                    str+= ct;
+                }
+                ct=1;
+
+            }
+            else{
+                ct++;
+            }
+            if(i==n-1){
+                str +=chars[n-1];
+                if(ct>1){
+                    str+= ct;
+                }
+                
+            }
+        }
+        for(int i=0; i<str.length(); i++){
+            chars[i]=str.charAt(i);
+        }
+        return str.length();
+    }
+}
