@@ -1,0 +1,22 @@
+class Solution {
+    public boolean squareIsWhite(String coordinates) {
+        char ch1=coordinates.charAt(0);
+        char ch2=coordinates.charAt(1);
+        if (ch2%2==1){
+            if(ch1=='a' ||ch1=='c'|| ch1=='e' || ch1=='g' ){
+                return false;
+            }
+            else{
+                return true;
+            }
+        }
+        else{
+            if(ch1=='a' ||ch1=='c'|| ch1=='e' || ch1=='g' ){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
+}
