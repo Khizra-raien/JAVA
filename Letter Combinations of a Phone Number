@@ -1,0 +1,30 @@
+class Solution {
+    public static void combination(String[] keypad,String digits, int idx,String curr, List<String> ans,int n ){
+        if(idx==n){
+            ans.add(curr);
+            return;
+        }
+        int num=(int) digits.charAt(idx)-'0';
+
+        for(int i=0;i<keypad[num].length();i++){
+            char ch=keypad[num].charAt(i);
+            String new_curr=curr +ch;
+            combination(keypad,digits, idx+1,new_curr,ans,n);
+        }
+    }
+    public List<String> letterCombinations(String digits) {
+        String[] keypad=new String[10];
+        keypad[2]="abc";
+        keypad[3]="def";
+        keypad[4]="ghi";
+        keypad[5]="jkl";
+        keypad[6]="mno";
+        keypad[7]="pqrs";
+        keypad[8]="tuv";
+        keypad[9]="wxyz";
+        
+        List<String> ans = new ArrayList<String>();
+        combination(keypad, digits, 0,"",ans,digits.length());
+        return ans;
+    }
+}
