@@ -1,0 +1,34 @@
+class Solution {
+    public static int diff(int[] nums, int i){
+        int dif=0;
+        int max=0;
+        for(int j=i+1;j<nums.length;j++){
+        if(nums[i]<nums[j]){
+            dif=nums[j]-nums[i];
+        }
+        if(max < dif){
+            max=dif;
+        }
+       }
+       if(max>0){
+        return max;
+       }
+       return-1;
+       
+
+    }
+    public int maximumDifference(int[] nums) {
+        int n=nums.length;
+        int max=0;
+        int r=0;
+        for(int i=0;i<n;i++){
+            r=diff(nums,i);
+            max=Math.max(max,r);
+        }
+       
+       if(max>0){
+        return max;
+       }
+        return -1;
+    }
+}
