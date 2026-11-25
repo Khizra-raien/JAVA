@@ -1,0 +1,23 @@
+class Solution {
+    public static int Choice(int[] nums, int left, int right){
+        if(left==right){
+            return nums[left];
+        }
+        int choiceleft=nums[left]-Choice(nums,left+1,right);
+        int choiceright=nums[right]-Choice(nums,left,right-1);
+        return Math.max(choiceleft,choiceright);
+
+    }
+    public boolean predictTheWinner(int[] nums) {
+        int n=nums.length;
+        int p1=Choice(nums,0,nums.length-1);
+        
+        if(p1>=0){
+            return true;
+        }else{
+              return false;
+        }
+      
+
+    }
+}
