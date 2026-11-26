@@ -1,0 +1,24 @@
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        if(s.length()==t.length()){
+            // convert string to char array
+            char[] sChar=s.toCharArray();
+            char[] tChar=t.toCharArray();
+            //sort both the array
+            Arrays.sort(sChar);
+            Arrays.sort(tChar);
+            //if the sorted char array are same or identical than the string are anagrams
+
+            boolean result= Arrays.equals(sChar,tChar);
+            if(result){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
+    }
+}
